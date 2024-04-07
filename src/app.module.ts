@@ -3,9 +3,9 @@ import { ConfigModule } from '@nestjs/config'
 import { HttpModule } from './infra/http/http.module';
 
 @Module({
-  imports: [ ConfigModule.forRoot({
+  imports: [ HttpModule, ConfigModule.forRoot({
     envFilePath: '.env'
-  }), HttpModule ],
+  }) ],
   controllers: [],
   providers: [],
 })

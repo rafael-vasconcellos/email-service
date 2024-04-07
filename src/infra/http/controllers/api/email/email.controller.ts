@@ -1,7 +1,6 @@
 import { Body, Controller, Get, Post, Res } from "@nestjs/common";
 import { ISendMailDTO } from "src/application/useCases/SendMail/ISendMail";
 import { SendMail } from "src/application/useCases/SendMail";
-import { Response } from "express";
 
 
 @Controller('api/email')
@@ -23,10 +22,8 @@ export class EmailController {
     }
 
     @Post()
-    async postRoot(@Body() postBody: ISendMailDTO, @Res() res?: Response) {
-        const { status, message } = await this.sendMail.execute(postBody)
-        if (res) { res?.status(status).send( {message} ) }
-        return status
+    async postRoot(@Body() postBody: ISendMailDTO) { console.log(postBody)
+        return await this.sendMail.execute(postBody)
     }
 
 }

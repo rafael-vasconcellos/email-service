@@ -11,7 +11,7 @@ describe('Email controller', () => {
 
     beforeEach(async() => { 
         const app = await Test.createTestingModule( {
-            imports: [ConfigModule.forRoot( {envFilePath: '.env'} )],
+            imports: [ ConfigModule.forRoot( {envFilePath: '.env'} ) ],
             controllers: [EmailController],
             providers: [ SendMail, 
                 {
@@ -39,11 +39,11 @@ describe('Email controller', () => {
                 email: 'rafael.vasconcelos7497@gmail.com',
                 subject: 'Contracts',
                 body: 'Teste'
-            } ) ).toBe(201)
+            } ) ).toHaveProperty('message')
         } )
 
         it('should not send an email', async() => { 
-            expect(await emailController.postRoot( {} as any ) ).toBe(400)
+            expect(await emailController.postRoot( {} as any ) ).toHaveProperty('error')
         } )
 
     } )
