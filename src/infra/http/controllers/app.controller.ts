@@ -2,7 +2,7 @@ import { Controller, Get, Redirect } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  @Get()
-  @Redirect('/api/email', 301)
-  root() {}
+    @Get()
+    @Redirect('/api/email', 301)
+    root() {}
 }

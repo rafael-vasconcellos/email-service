@@ -1,9 +1,9 @@
 import { Test } from "@nestjs/testing"
-import { EmailController } from "./email.controller"
-import { SendMail } from "src/application/useCases/SendMail"
-import { MailTrapProvider } from "src/infra/providers/MailTrap"
-import { IMailProvider } from "src/application/providers/IMailProvider"
 import { ConfigModule } from "@nestjs/config"
+import { SendMail } from "src/application/useCases/SendMail"
+import { IMailProvider } from "src/application/providers/IMailProvider"
+import { MailTrapProvider } from "src/infra/providers/MailTrap"
+import { EmailController } from "./email.controller"
 
 
 describe('Email controller', () => { 

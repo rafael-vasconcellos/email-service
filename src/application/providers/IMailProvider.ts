@@ -11,5 +11,5 @@ export interface IMessage {
 }
 
 export abstract class IMailProvider {
-    abstract sendMail(message: IMessage): Promise<any>
+    abstract sendMail(message: IMessage): Promise<void>
 }

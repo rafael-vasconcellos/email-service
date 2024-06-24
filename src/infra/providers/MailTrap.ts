@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { IMailProvider, IMessage } from "../../application/providers/IMailProvider"
 import * as nodemailer from 'nodemailer';
 import Mail from "nodemailer/lib/mailer";
+import { IMailProvider, IMessage } from "../../application/providers/IMailProvider";
 
 
 @Injectable()

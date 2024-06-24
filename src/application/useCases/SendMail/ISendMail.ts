@@ -1,5 +1,4 @@
 import { IsEmail, IsNotEmpty, IsOptional, IsString, Length } from "class-validator"
-import { IMailProvider } from "src/application/providers/IMailProvider"
 
 
 export class ISendMailDTO { 
@@ -21,5 +20,5 @@ export class ISendMailDTO {
 
 export abstract class ISendMail { 
     /* abstract provider: IMailProvider  */
-    abstract execute(message: ISendMailDTO): Promise<any>
+    abstract execute(message: ISendMailDTO): Promise<unknown>
 }
